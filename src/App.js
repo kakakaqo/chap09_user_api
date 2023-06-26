@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+import {AppBar, Toolbar, Typography} from '@mui/material';
 import './App.css';
+import UserList from './component/UserList';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <AppBar position='static'>
+      <Toolbar>
+        <Typography variant='h6'>
+          User List
+        </Typography>
+      </Toolbar>
+     </AppBar>
+     <UserList />
     </div>
   );
 }
-
-export default App;
