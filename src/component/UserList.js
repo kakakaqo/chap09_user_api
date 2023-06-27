@@ -4,6 +4,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Snackbar } from "@mui/material";
 import AddUser from "./AddUser";
 import EditUser from './EditUser';
+import UserDetailDialog from "./UserDetailDialog";
 
 export default function UserList(){
 
@@ -16,10 +17,22 @@ export default function UserList(){
     // 출력해주도록 각 컬럼을 정의함.
     const columns = [
         {field: 'id', headerName: 'Id', width: 300},
-        {field: 'name', headerName: 'Name', width: 300},
+        // {field: 'name', headerName: 'Name', width: 300},
+        // {field: 'age', headerName: 'Age', width: 300},
+        // {field: 'phone', headerName: 'Phone', width: 250},
+        // {field: 'address', headerName: 'Address', width: 250},
+        // 사용자의 상세정보를 보여줄 컴포넌트 포함
+        {
+            field: 'name',
+            headerName: 'Name',
+            width: 300,
+            renderCell: (row) => <UserDetailDialog data={row} />
+        },
+
         {field: 'age', headerName: 'Age', width: 300},
         {field: 'phone', headerName: 'Phone', width: 250},
         {field: 'address', headerName: 'Address', width: 250},
+
         {
             field: 'edit', 
             headerName: 'Edit', 
@@ -28,6 +41,7 @@ export default function UserList(){
             ,
             renderCell: row => <EditUser data={row} updateUser={updateUser} />
         },
+
         {
           field: 'delete', 
           headerName: 'Operation', 
