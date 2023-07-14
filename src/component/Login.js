@@ -9,7 +9,6 @@ import { SERVER_URL } from "../constant";
 export default function Login({ setSnackbarOpen, setSnackbarMessage, onLogin }) {
   // 로그인 다이얼로그 오픈/내림을 결정하는 상태 변수
   const [open, setOpen] = useState(false);
-  
   // 사용자 정보 저장용 상태 변수
   const [loginUser, setLoginUser] = useState({
     id: '',
@@ -20,7 +19,7 @@ export default function Login({ setSnackbarOpen, setSnackbarMessage, onLogin }) 
   const handleOpen = () => {
     setOpen(true);
   };
-
+  
   // 로그인 다이얼로그 내림
   const handleClose = () => {
     setOpen(false);
